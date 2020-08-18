@@ -1,0 +1,75 @@
+FEM Problem Specifications
+--------------------------
+FEM file                         = domain.g
+#FEM file                         = box1x1q9.g
+Output EXODUS II file            = out.exoII
+GUESS file                       = contin.dat
+SOLN file                        = no
+Write intermediate results       = no
+
+General Specifications
+----------------------
+Output Level                     = 0
+Debug                            = 0
+Initial Guess                    = read_exoII_file init.exoII
+#Initial Guess                    = zero
+
+Time Integration Specifications
+-------------------------------
+Time integration                 = transient
+delta_t                          = 1e-3
+Initial Time                     = 0.0
+Maximum number of time steps     = 500
+Maximum time                     = 50
+Minimum time step                = 1e-6
+Maximum time step                = 1
+Time step parameter              = 0.5
+Time step error  		 = -1.e-2  1   1   1   1   1   1 1
+Printing Frequency               = 1
+
+Solver Specifications
+---------------------
+Solution Algorithm               = amesos
+Amesos Solver Package            = mumps
+Number of Newton Iterations      = 10
+Newton correction factor         = 1.0
+Normalized Residual Tolerance    = 1e-10
+Residual Ratio Tolerance         = 1e-4
+
+Boundary Condition Specifications
+---------------------------------
+Number of BC                     = -1
+
+# Bottom SS 1 NS 1
+
+# Right SS 2 NS 2
+
+# Top SS 3 NS 3
+
+# Left SS 4 NS 4
+
+END OF BC
+######################################
+
+Problem Description
+-------------------
+Number of Materials = 1
+
+MAT = species  1
+
+        Coordinate System = CARTESIAN
+        Element Mapping   = isoparametric
+        Mesh Motion = ARBITRARY
+        Number of bulk species = 2
+
+	Number of EQ = -1
+        EQ = species_bulk     Q2  Y     Q2   1.   1.   1.   1. 1.
+        END OF EQ
+                              	    ms  adv  bnd  dif  src por
+
+
+
+
+
+Post Processing Specifications
+------------------------------
