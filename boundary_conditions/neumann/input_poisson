@@ -65,7 +65,7 @@ MAT = example  1
         Number of bulk species = 0
 
 	Number of EQ = -1
-        EQ = poisson Q1 U Q1                 1.0  1.0  -1.0
+        EQ = poisson Q1 U Q1                 1.0  1.0  1.0
         END OF EQ
                               	    ms  adv  bnd  dif  src por
 
